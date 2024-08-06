@@ -11,7 +11,7 @@
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
   "dependencies": {
-    "culotta-lib": "^0.0.2",
+    "culotta-lib": "^0.0.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

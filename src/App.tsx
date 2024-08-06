@@ -1,13 +1,11 @@
-import { Button } from 'culotta-lib'
+import './App.scss'
+import { Button, Heading, Logo, Pagination, Spinner } from 'culotta-lib'
 import CardGrid from './components/CardGrid/CardGrid'
 import Header from './components/Header'
-import Spinner from './components/Spinner'
-import { usePokemonList } from './hooks/usePokemonList'
-import './App.scss'
-import Navigation from './components/Navigation/Navigation'
 import { createPortal } from 'react-dom'
 import ModalCard from './components/ModalCard/ModalCard'
 import PokemonDetail from './components/PokemonDetail/PokemonDetail'
+import { usePokemonList } from './hooks/usePokemonList'
 import { usePokemonData } from './hooks/usePokemonData'
 
 function App() {
@@ -31,16 +29,12 @@ function App() {
   return (
     <div className="app">
       <Header
-        logo={<span>Hello Worldd</span>}
-        actions={<Button label="github" />}
+        logo={<Logo />}
+        actions={<Button onClick={() => window.open('https://github.com/nicoculotta')} size="small" variants="primary" hasBorder label="github" />}
       />
       <div className="app__bar">
-        <h2>Pókedex</h2>
-        <Navigation
-          handlePageChange={handlePageChange}
-          currentPage={currentPage}
-          totalPages={totalPages}
-        />
+        <Heading as="h1" size="s">List of Pokemons</Heading>
+        <Pagination handlePageChange={handlePageChange} currentPage={currentPage} totalPages={totalPages} nextLabel="Next" previousLabel="Previous" size='small' />
       </div>
       {loading ? (
         <Spinner />

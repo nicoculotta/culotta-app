@@ -1,5 +1,5 @@
+import { Card } from 'culotta-lib'
 import { PokemonBasicInfo } from '../../types/pokemon'
-import Card from '../Card/Card'
 import './CardGrid.scss'
 
 interface CardGridProps {
@@ -29,7 +29,7 @@ const CardGrid = ({ cardsList, onClickCard }: CardGridProps) => {
           cardsList.map((card) => (
             <Card
               key={card.id}
-              image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${card.id}.png`}
+              imageUrl={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${card.id}.png`}
               name={card.name}
               onClick={() => handleClickCard(card.id)}
               variant={randomVariant()}

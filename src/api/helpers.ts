@@ -1,7 +1,5 @@
 const POKEMON_API_URL = import.meta.env.VITE_POKEMON_API_URL
 
-console.log(POKEMON_API_URL)
-
 export const getPokemonList = async (limit: number, offset: number) => {
   try {
     const response = await fetch(

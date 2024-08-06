@@ -1,5 +1,5 @@
+import { CardDetails, Spinner } from 'culotta-lib'
 import { Pokemon } from '../../types/pokemon'
-import Spinner from '../Spinner'
 
 interface PokemonDetailProps {
   pokemon: Pokemon
@@ -7,21 +7,21 @@ interface PokemonDetailProps {
 }
 
 const PokemonDetail = ({ pokemon, loading }: PokemonDetailProps) => {
+
+
+  const statsData = {
+    headers: pokemon.stats.map((stat) => stat.stat.name),
+    data: [pokemon.stats.map((stat) => stat.base_stat) as any[]]
+  }
+  const typesData = pokemon.types.map((type) => type.type.name)
+
   return (
     <div>
       {loading ? (
         <Spinner />
       ) : (
         <>
-          <h1>{pokemon.name}</h1>
-          <img
-            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
-            alt={pokemon.name}
-          />
-          <p>{pokemon.types.map((type) => type.type.name).join(', ')}</p>
-          <p>{pokemon.height}</p>
-          <p>{pokemon.weight}</p>
-          <p>{pokemon.stats.map((stat) => stat.stat.name).join(', ')}</p>
+          <CardDetails name={pokemon.name} imageUrl={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} types={typesData} stats={statsData} weight={pokemon.weight} height={pokemon.height} />
         </>
       )}
     </div>

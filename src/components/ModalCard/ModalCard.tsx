@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import './ModalCard.scss'
+import { Button } from 'culotta-lib'
 
 interface ModalCardProps {
   isOpen: boolean
@@ -31,9 +32,7 @@ const ModalCard: React.FC<ModalCardProps> = ({ isOpen, onClose, children }) => {
   return (
     <div className="modal-card__overlay" onClick={onClose}>
       <div className="modal-card__content" onClick={(e) => e.stopPropagation()}>
-        <button className="modal-card__close" onClick={onClose}>
-          X
-        </button>
+        <Button className="modal-card__close" onClick={onClose} size="small" variants="secondary" hasBorder label="X" />
         {children}
       </div>
     </div>
