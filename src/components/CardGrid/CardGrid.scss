@@ -1,0 +1,15 @@
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
+  margin-bottom: 50px;
+}
+
+.card-grid__empty {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
