@@ -1,5 +1,5 @@
 import './App.scss'
-import { Button, Heading, Logo, Pagination, Spinner } from 'culotta-lib'
+import { Button, Heading, Logo, Spinner, Pagination } from 'culotta-lib'
 import CardGrid from './components/CardGrid/CardGrid'
 import Header from './components/Header'
 import { createPortal } from 'react-dom'
@@ -25,6 +25,7 @@ function App() {
   const handleCloseModal = () => {
     setPokemonId(null)
   }
+
 
   return (
     <div className="app">
