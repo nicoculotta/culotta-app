@@ -1,3 +1,4 @@
+import React from 'react'
 import { Card } from 'culotta-lib'
 import { PokemonBasicInfo } from '../../types/pokemon'
 import './CardGrid.scss'

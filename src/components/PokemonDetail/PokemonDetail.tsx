@@ -1,3 +1,4 @@
+import React from 'react'
 import { CardDetails, Spinner } from 'culotta-lib'
 import { Pokemon } from '../../types/pokemon'
 

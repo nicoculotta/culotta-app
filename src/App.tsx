@@ -1,3 +1,4 @@
+import React from 'react'
 import './App.scss'
 import { Button, Heading, Logo, Spinner, Pagination } from 'culotta-lib'
 import CardGrid from './components/CardGrid/CardGrid'
