@@ -8,8 +8,6 @@ describe('Pokedex App', () => {
     cy.get('h1').should('contain', 'List of Pokemons')
   })
 
-  /*  
-
   it('should have a list of pokemons', () => {
     cy.get('.card-grid').should('be.visible')
     cy.get('.card-grid').children().should('have.length', 18)
@@ -31,5 +29,5 @@ describe('Pokedex App', () => {
     cy.get('.modal-card__content').should('be.visible')
     cy.get('.modal-card__close').click()
     cy.get('.modal-card__content').should('not.exist')
-  }) */
+  })
 })
