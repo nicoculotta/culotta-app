@@ -23,21 +23,22 @@ const CardGrid = ({ cardsList, onClickCard }: CardGridProps) => {
 
   return (
     <>
-      <div className="card-grid">
+      <ul className="card-grid">
         {cardsList.length === 0 ? (
           <div className="card-grid__empty">No cards found</div>
         ) : (
           cardsList.map((card) => (
-            <Card
-              key={card.id}
-              imageUrl={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${card.id}.png`}
-              name={card.name}
-              onClick={() => handleClickCard(card.id)}
-              variant={randomVariant()}
-            />
+            <li key={card.id}>
+              <Card
+                imageUrl={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${card.id}.png`}
+                name={card.name}
+                onClick={() => handleClickCard(card.id)}
+                variant={randomVariant()}
+              />
+            </li>
           ))
         )}
-      </div>
+      </ul>
     </>
   )
 }

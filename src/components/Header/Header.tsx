@@ -8,10 +8,10 @@ interface HeaderProps {
 
 const Header = ({ logo, actions }: HeaderProps) => {
   return (
-    <div className="header">
+    <header className="header">
       <div className="header__logo">{logo}</div>
       <div className="header__actions">{actions}</div>
-    </div>
+    </header>
   )
 }
 
