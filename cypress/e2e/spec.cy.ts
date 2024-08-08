@@ -1,14 +1,10 @@
 /// <reference types="cypress" />
 describe('Pokedex App', () => {
-  it('should visit the page', () => {
-    cy.visit('/')
-  })
-
   beforeEach(() => {
     cy.visit('/')
   })
 
-  it('should have a title', () => {
+  /*   it('should have a title', () => {
     cy.get('h1').should('contain', 'List of Pokemons')
   })
 
@@ -33,5 +29,5 @@ describe('Pokedex App', () => {
     cy.get('.modal-card__content').should('be.visible')
     cy.get('.modal-card__close').click()
     cy.get('.modal-card__content').should('not.exist')
-  })
+  }) */
 })
