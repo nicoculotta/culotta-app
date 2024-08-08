@@ -7,8 +7,5 @@ export default defineConfig({
       // implement node event listeners here
     },
     defaultCommandTimeout: 10000,
-    env: {
-      VITE_POKEMON_API_URL: 'https://pokeapi.co/api/v2',
-    },
   },
 })

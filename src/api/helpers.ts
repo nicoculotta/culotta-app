@@ -1,4 +1,4 @@
-const POKEMON_API_URL = import.meta.env.VITE_POKEMON_API_URL as string
+const POKEMON_API_URL = 'https://pokeapi.co/api/v2'
 
 interface PokemonListResponse {
   count: number
