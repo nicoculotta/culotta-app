@@ -59,7 +59,7 @@ jobs:
         run: npm run test
 
   e2e:
-    needs: build
+    needs: [test, build]
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
@@ -82,3 +82,13 @@ jobs:
           command: npm run cy:run-e2e
           start: npm run dev
           wait-on: http://localhost:5173
+
+  deploy:
+    needs: e2e
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Deploy
+        run: curl -X POST -d {} {{ secrets.NETLIFY_HOOK }}
