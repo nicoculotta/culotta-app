@@ -9,12 +9,12 @@ interface CardGridProps {
 }
 
 const CardGrid = ({ cardsList, onClickCard }: CardGridProps) => {
-  const randomVariant = () => {
-    const variants = ['purple', 'yellow', 'white']
-    return variants[Math.floor(Math.random() * variants.length)] as
-      | 'purple'
-      | 'yellow'
-      | 'white'
+  const zebraVariant = (index: number) => {
+    if (index % 2 === 0) {
+      return 'purple'
+    } else {
+      return 'yellow'
+    }
   }
 
   const handleClickCard = (id: number) => {
@@ -33,7 +33,7 @@ const CardGrid = ({ cardsList, onClickCard }: CardGridProps) => {
                 imageUrl={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${card.id}.png`}
                 name={card.name}
                 onClick={() => handleClickCard(card.id)}
-                variant={randomVariant()}
+                variant={zebraVariant(card.id)}
               />
             </li>
           ))

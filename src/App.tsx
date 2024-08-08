@@ -12,12 +12,7 @@ import { usePokemonData } from './hooks/usePokemonData'
 function App() {
   const { pokemonList, loading, handlePageChange, currentPage, totalPages } =
     usePokemonList()
-  const {
-    pokemon,
-    pokemonId,
-    setPokemonId,
-    loading: pokemonLoading,
-  } = usePokemonData()
+  const { pokemon, pokemonId, setPokemonId } = usePokemonData()
 
   const handlePokemonClick = (id: number) => {
     setPokemonId(id)
@@ -66,9 +61,7 @@ function App() {
           <ModalCard
             isOpen={true}
             onClose={handleCloseModal}
-            children={
-              <PokemonDetail pokemon={pokemon} loading={pokemonLoading} />
-            }
+            children={<PokemonDetail pokemon={pokemon} />}
           />,
           document.body
         )}

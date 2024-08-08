@@ -10,7 +10,7 @@ export const usePokemonList = () => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
 
-  const ITEMS_PER_PAGE = 18
+  const ITEMS_PER_PAGE = 20
 
   const mapResults = (
     results: { url: string; name: string }[]
@@ -44,7 +44,7 @@ export const usePokemonList = () => {
   }, [currentPage])
 
   const handlePageChange = (newPage: number) => {
-    if (newPage >= 1 && newPage <= totalPages) {
+    if (newPage !== currentPage && newPage >= 1 && newPage <= totalPages) {
       setCurrentPage(newPage)
     }
   }

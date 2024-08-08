@@ -10,13 +10,13 @@ describe('Pokedex App', () => {
 
   it('should have a list of pokemons', () => {
     cy.get('.card-grid').should('be.visible')
-    cy.get('.card-grid').children().should('have.length', 18)
+    cy.get('.card-grid').children().should('have.length', 20)
   })
 
   it('should navigate to the next page and display the next 18 pokemons', () => {
     cy.get('.pagination').children().should('have.length', 2)
     cy.get('.pagination').children().eq(1).click()
-    cy.get('.card-grid').children().should('have.length', 18)
+    cy.get('.card-grid').children().should('have.length', 20)
   })
 
   it('should open a modal with the pokemon details when clicking on a pokemon', () => {
