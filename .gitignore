@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 .env
 coverage
+cypress/downloads
+cypress/support
+cypress/fixtures
