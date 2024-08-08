@@ -17,11 +17,17 @@
     "incremental": true
   },
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.test.ts",
-    "**/*.test.tsx"
+    "**/*.test.tsx",
+    "jest.setup.ts",
+    "src/**/*"
   ],
-  "exclude": ["node_modules", "src/**/*.test.js"]
+  "exclude": [
+    "node_modules",
+    "src/**/*.test.js",
+    "./cypress.config.ts",
+    "cypress"
+  ]
 }
