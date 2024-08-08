@@ -59,7 +59,7 @@ jobs:
         run: npm run test
 
   e2e:
-    needs: [test, build]
+    needs: build
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
@@ -84,11 +84,11 @@ jobs:
           wait-on: http://localhost:5173
 
   deploy:
-    needs: e2e
+    needs: [e2e, test]
+    name: 'Deploy to Netlify'
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: jsmrcaga/action-netlify-deploy@v2.0.0
         with:
-          fetch-depth: 0
-      - name: Deploy
-        run: curl -X POST -d {} {{ secrets.NETLIFY_HOOK }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
+          NETLIFY_DEPLOY_TO_PROD: true

@@ -4,9 +4,11 @@ describe('Pokedex App', () => {
     cy.visit('/')
   })
 
-  /*   it('should have a title', () => {
+  it('should have a title', () => {
     cy.get('h1').should('contain', 'List of Pokemons')
   })
+
+  /*  
 
   it('should have a list of pokemons', () => {
     cy.get('.card-grid').should('be.visible')
