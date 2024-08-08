@@ -27,16 +27,32 @@ function App() {
     setPokemonId(null)
   }
 
-
   return (
     <div className="app">
       <Header
         logo={<Logo />}
-        actions={<Button onClick={() => window.open('https://github.com/nicoculotta')} size="small" variants="primary" hasBorder label="github" />}
+        actions={
+          <Button
+            onClick={() => window.open('https://github.com/nicoculotta')}
+            size="small"
+            variants="primary"
+            hasBorder
+            label="github"
+          />
+        }
       />
       <div className="app__bar">
-        <Heading as="h1" size="s">List of Pokemons</Heading>
-        <Pagination handlePageChange={handlePageChange} currentPage={currentPage} totalPages={totalPages} nextLabel="Next" previousLabel="Previous" size='small' />
+        <Heading as="h1" size="s">
+          List of Pokemons
+        </Heading>
+        <Pagination
+          handlePageChange={handlePageChange}
+          currentPage={currentPage}
+          totalPages={totalPages}
+          nextLabel="Next"
+          previousLabel="Previous"
+          size="small"
+        />
       </div>
       {loading ? (
         <Spinner />

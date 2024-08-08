@@ -9,7 +9,7 @@ jest.mock('../../api/helpers', () => ({
 describe('usePokemonData', () => {
   it('should load the pokemon data when the id is set', async () => {
     const mockPokemon = { id: 1, name: 'Bulbasaur' }
-      ; (getPokemonById as jest.Mock).mockResolvedValue(mockPokemon)
+    ;(getPokemonById as jest.Mock).mockResolvedValue(mockPokemon)
 
     const { result } = renderHook(() => usePokemonData())
 
@@ -30,8 +30,10 @@ describe('usePokemonData', () => {
   })
 
   it('should handle errors when fetching pokemon data', async () => {
-    const errorMessage = () => { return 'Error fetching pokemon data' }
-      ; (getPokemonById as jest.Mock).mockRejectedValue(new Error(errorMessage()))
+    const errorMessage = () => {
+      return 'Error fetching pokemon data'
+    }
+    ;(getPokemonById as jest.Mock).mockRejectedValue(new Error(errorMessage()))
 
     const { result } = renderHook(() => usePokemonData())
 

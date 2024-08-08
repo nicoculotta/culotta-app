@@ -8,11 +8,9 @@ interface PokemonDetailProps {
 }
 
 const PokemonDetail = ({ pokemon, loading }: PokemonDetailProps) => {
-
-
   const statsData = {
     headers: pokemon.stats.map((stat) => stat.stat.name),
-    data: [pokemon.stats.map((stat) => stat.base_stat) as any[]]
+    data: [pokemon.stats.map((stat) => stat.base_stat.toString())],
   }
   const typesData = pokemon.types.map((type) => type.type.name)
 
@@ -22,7 +20,14 @@ const PokemonDetail = ({ pokemon, loading }: PokemonDetailProps) => {
         <Spinner />
       ) : (
         <>
-          <CardDetails name={pokemon.name} imageUrl={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} types={typesData} stats={statsData} weight={pokemon.weight} height={pokemon.height} />
+          <CardDetails
+            name={pokemon.name}
+            imageUrl={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
+            types={typesData}
+            stats={statsData}
+            weight={pokemon.weight}
+            height={pokemon.height}
+          />
         </>
       )}
     </div>

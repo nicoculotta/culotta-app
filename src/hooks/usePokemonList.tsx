@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react'
 import { getPokemonList } from '../api/helpers'
 import { PokemonBasicInfo } from '../types/pokemon'
@@ -11,8 +12,10 @@ export const usePokemonList = () => {
 
   const ITEMS_PER_PAGE = 18
 
-  const mapResults = (results: any[]): PokemonBasicInfo[] =>
-    results.map(({ url, name }) => ({
+  const mapResults = (
+    results: { url: string; name: string }[]
+  ): PokemonBasicInfo[] =>
+    results.map(({ url, name }: { url: string; name: string }) => ({
       url,
       name,
       id: parseInt(url.split('/').filter(Boolean).pop() || '0'),

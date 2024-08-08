@@ -27,13 +27,24 @@ const ModalCard: React.FC<ModalCardProps> = ({ isOpen, onClose, children }) => {
     }
   }, [isOpen, onClose])
 
-  if (!isOpen) return null
+  if (!isOpen) {
+    return null
+  }
 
   return (
     <div className="modal-card__overlay" onClick={onClose}>
       <div className="modal-card__content" onClick={(e) => e.stopPropagation()}>
-        <Button className="modal-card__close" onClick={onClose} size="small" variants="secondary" hasBorder label="X" />
-        {children}
+        <>
+          <Button
+            className="modal-card__close"
+            onClick={onClose}
+            size="small"
+            variants="secondary"
+            hasBorder
+            label="X"
+          />
+          {children}
+        </>
       </div>
     </div>
   )
